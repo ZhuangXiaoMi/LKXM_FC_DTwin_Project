@@ -1,0 +1,28 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<button onclick="xxx()"></button>
+<textarea>@result</textarea>
+@code {
+    private string result = string.Empty;
+
+    public async void xxx()
+    {
+        var client = new HttpClient();
+
+        var response = await client.GetAsync("http://localhost:6010/api/ids4");
+        if (!response.IsSuccessStatusCode)
+        {
+            result = response.StatusCode.ToString();
+        }
+        else
+        {
+            result = await response.Content.ReadAsStringAsync();
+        }
+    }
+}
