@@ -1,9 +1,9 @@
-{
+﻿{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:9041",
+      "applicationUrl": "http://localhost:9040",
       "sslPort": 0
     }
   },
@@ -15,20 +15,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "LKXM.FCDTwin.Blazor": {
+    "LKXM.FCDTwin.WebApi": {
       "commandName": "Project",
+      "dotnetRunMessages": "true",
       "launchBrowser": true,
+      "applicationUrl": "http://localhost:9040",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": "true",
-      "applicationUrl": "http://localhost:9041"
-    },
-    "Docker": {
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "publishAllPorts": true
+      }
     }
   }
 }

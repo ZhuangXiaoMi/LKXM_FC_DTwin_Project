@@ -31,6 +31,11 @@ namespace LKXM.FCDTwin.IdentityServer4
         {
             return new List<ApiResource>
             {
+                new ApiResource("webapi", "LKXM.FCDTwin.WebApi")
+                {
+                    ApiSecrets = { new Secret("secret".Sha256()) },
+                    Scopes = { "api" }
+                },
                 new ApiResource("aggregate", "LKXM.FCDTwin.Aggregate")
                 {
                     ApiSecrets = { new Secret("secret".Sha256()) },
@@ -56,6 +61,17 @@ namespace LKXM.FCDTwin.IdentityServer4
                 {
                     ClientId = "LKXM.FCDTwin.Blazor",
                     ClientName = "PC端",
+                    ClientSecrets = { new Secret("secret".Sha256()) },
+
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    //客户端有权访问的范围
+                    AllowedScopes = { "api" },
+                    AccessTokenLifetime = 75
+                },
+                new Client
+                {
+                    ClientId = "LKXM.FCDTwin.WebApi",
+                    ClientName = "WebApi",
                     ClientSecrets = { new Secret("secret".Sha256()) },
 
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
